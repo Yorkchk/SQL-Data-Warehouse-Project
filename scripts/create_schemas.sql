@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS bronze.crm_cust_info;
 CREATE TABLE bronze.crm_cust_info (
-	cst_id INT PRIMARY KEY,
+	cst_id NVARCHAR(50),
     cst_key NVARCHAR(50),
     cst_firstname NVARCHAR(50),
     cst_lastname NVARCHAR(50),
@@ -11,7 +11,7 @@ CREATE TABLE bronze.crm_cust_info (
 
 DROP TABLE IF EXISTS bronze.crm_prd_info;
 CREATE TABLE bronze.crm_prd_info (
-	prd_id INT PRIMARY KEY,
+	prd_id INT,
     prd_key NVARCHAR(50),
     prd_nm NVARCHAR(50),
     prd_cost INT,
@@ -24,7 +24,7 @@ CREATE TABLE bronze.crm_prd_info (
 
 DROP TABLE IF EXISTS bronze.crm_sales_details;
 CREATE TABLE bronze.crm_sales_details (
-	sls_ord_num NVARCHAR(50) PRIMARY KEY,
+	sls_ord_num NVARCHAR(50),
     sls_prd_key NVARCHAR(50),
     sls_cust_id INT,
     sls_order_dt INT,
@@ -37,7 +37,7 @@ CREATE TABLE bronze.crm_sales_details (
 
 DROP TABLE IF EXISTS bronze.erp_cust_az12;
 CREATE TABLE bronze.erp_cust_az12 (
-	CID NVARCHAR(50) PRIMARY KEY,
+	CID NVARCHAR(50),
     BDATE Date,
     GEN NVARCHAR(50)
 );
@@ -46,7 +46,7 @@ CREATE TABLE bronze.erp_cust_az12 (
 
 DROP TABLE IF EXISTS bronze.erp_loc_a101;
 CREATE TABLE bronze.erp_loc_a101 (
-	CID NVARCHAR(50) PRIMARY KEY,
+	CID NVARCHAR(50),
     CNTRY NVARCHAR(50)
 );
 
@@ -54,7 +54,7 @@ CREATE TABLE bronze.erp_loc_a101 (
 
 DROP TABLE IF EXISTS bronze.erp_px_cat_g1v2;
 CREATE TABLE bronze.erp_px_cat_g1v2 (
-	ID NVARCHAR(50) PRIMARY KEY,
+	ID NVARCHAR(50),
     CAT NVARCHAR(50),
     SUBCAT NVARCHAR(50),
     MAINTENANCE NVARCHAR(50)
