@@ -39,3 +39,8 @@ CREATE TEMPORARY TABLE cleaned_crm_cust_info_table as
 	ON cust_names.`name` = noblank_table.cst_firstname
 	ORDER BY noblank_table.cst_id
 	;
+
+TRUNCATE TABLE silver.crm_cust_info;
+
+INSERT INTO silver.crm_cust_info
+SELECT * FROM cleaned_crm_cust_info_table;
