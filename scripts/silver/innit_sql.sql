@@ -27,7 +27,7 @@ DROP TABLE IF EXISTS silver.crm_sales_details;
 CREATE TABLE silver.crm_sales_details (
 	sls_ord_num NVARCHAR(50),
     sls_prd_key NVARCHAR(50),
-    sls_cust_id INT PRIMARY KEY,
+    sls_cust_id INT,
     sls_order_dt Date,
     sls_ship_dt Date,
     sls_due_dt Date,

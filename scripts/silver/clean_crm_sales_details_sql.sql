@@ -1,3 +1,6 @@
+TRUNCATE TABLE silver.crm_sales_details;
+
+INSERT INTO silver.crm_sales_details
 with cte as
 (
 SELECT 
