@@ -16,8 +16,8 @@ CREATE TABLE bronze.crm_prd_info (
     prd_nm NVARCHAR(50),
     prd_cost INT,
     prd_line NVARCHAR(50),
-    prd_start_dt Datetime,
-    prd_end_dt Datetime
+    prd_start_dt NVARCHAR(50),
+    prd_end_dt NVARCHAR(50)
 );
 
 

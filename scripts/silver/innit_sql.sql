@@ -12,10 +12,11 @@ CREATE TABLE silver.crm_cust_info (
 DROP TABLE IF EXISTS silver.crm_prd_info;
 CREATE TABLE silver.crm_prd_info (
 	prd_id INT PRIMARY KEY,
+    cat_id NVARCHAR(50),
     prd_key NVARCHAR(50),
     prd_nm NVARCHAR(50),
     prd_cost INT,
-    prd_line CHAR,
+    prd_line NVARCHAR(50),
     prd_start_dt Date,
     prd_end_dt Date
 );
