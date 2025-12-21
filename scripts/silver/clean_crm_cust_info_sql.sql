@@ -32,8 +32,16 @@ CREATE TEMPORARY TABLE filtered_names_table as
     
 DROP TABLE IF EXISTS cleaned_crm_cust_info_table;
 CREATE TEMPORARY TABLE cleaned_crm_cust_info_table as
-	SELECT noblank_table.cst_id, noblank_table.cst_key, noblank_table.cst_firstname, noblank_table.cst_lastname, noblank_table.cst_marital_status,
-	cust_names.gender as cust_gndr, noblank_table.cst_create_date
+	SELECT noblank_table.cst_id, noblank_table.cst_key, noblank_table.cst_firstname, noblank_table.cst_lastname,
+case 
+		WHEN noblank_table.cst_marital_status = 'S' then 'Single'
+        WHEN noblank_table.cst_marital_status = 'M' then 'Married'
+    END as cst_marital_status,
+case 
+		when cust_names.gender = 'M' then 'Male'
+        when cust_names.gender = 'F' then 'Female'
+    END as cust_gndr,    
+    noblank_table.cst_create_date
 	FROM noblank_table
 	JOIN filtered_names_table as cust_names
 	ON cust_names.`name` = noblank_table.cst_firstname
