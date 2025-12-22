@@ -24,7 +24,10 @@ case
 		WHEN noblank_table.cst_marital_status = 'S' then 'Single'
         WHEN noblank_table.cst_marital_status = 'M' then 'Married'
     END as cst_marital_status,
-	noblank_table.cst_gndr, 
+case 
+		WHEN noblank_table.cst_gndr = 'M' then 'Male'
+        WHEN noblank_table.cst_gndr = 'F' then 'Female'
+    END as cst_gndr,
     noblank_table.cst_create_date
 	FROM noblank_table
 	ORDER BY noblank_table.cst_id
