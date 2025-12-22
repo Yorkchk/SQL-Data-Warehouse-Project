@@ -1,5 +1,6 @@
 CREATE OR REPLACE VIEW gold.dim_products AS
 SELECT 
+ROW_NUMBER() OVER() as product_number,
 pm.prd_id as Product_id,
 pm.cat_id as Category_id,
 pm.prd_key as Product_key,
